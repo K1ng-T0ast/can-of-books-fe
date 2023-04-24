@@ -1,7 +1,7 @@
 # Can of Books
 
 **Author**: Kyle White, Joshua Coffey
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 1.0.0
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -14,7 +14,7 @@
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
+04-24-2023 - Application now has a functioning express server with custom MongoDB database and using Mongoose for data formatting.
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Estimates
