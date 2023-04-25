@@ -31,13 +31,17 @@ class BestBooks extends React.Component {
       description: event.target.description.value,
       status: event.target.status.checked
     }
-    console.log(bookObj);
+    console.log('Form submitted', bookObj);
 
     const postBook = async (bookObj) => {
       try {
         let url = `${process.env.REACT_APP_SERVER}/books`
         let postBook = await axios.post(url, bookObj);
         this.setState({ books: [...this.state.books, postBook.data] })
+        this.closeModal();
+
+        console.log('Book saved', postBook.data)
+
       } catch (error) {
         console.log(error.message);
       }
@@ -99,6 +103,7 @@ class BestBooks extends React.Component {
           show={this.state.showModal}
           onHide={this.closeModal}
           onSubmit={this.handleBookSubmit}
+          onBookAdd={this.closeModal}
         />
       </>
     );
