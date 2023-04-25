@@ -91,6 +91,7 @@ class BestBooks extends React.Component {
                   <h3>{book.title}</h3>
                   <p>{book.description}</p>
                   <Button onClick={this.openModal}>Add a Book!</Button>
+                  <Button onClick={() => this.deleteBook(book._id)}>Delete Book</Button>
                 </Carousel.Caption>
               </Carousel.Item>
             ))}
