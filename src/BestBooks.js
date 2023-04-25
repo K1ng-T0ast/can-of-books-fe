@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Button } from 'react-bootstrap';
 import Image from './Images/book.jpeg'
+import BookModal from './BookFormModal';
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -18,6 +19,40 @@ class BestBooks extends React.Component {
       this.setState({ books: urlData.data });
     } catch (error) {
       console.log(error.message);
+    }
+  };
+
+  handleBookSubmit = (event) => {
+    event.preventDefault();
+
+    let bookObj = {
+      title: event.target.title.value,
+      description: event.target.description.value,
+      status: event.target.status.checked
+    }
+    console.log(bookObj);
+
+    const postBook = async (bookObj) => {
+      try {
+        let url = `${process.env.REACT_APP_SERVER}/books`
+        let postBook = await axios.post(url, bookObj);
+        this.setState({ books: [...this.state.books, postBook.data] })
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    postBook(bookObj);
+  };
+
+  deleteBook = async (bookId) => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/books/${bookId}`;
+      await axios.delete(url);
+      let updatedBooks = this.state.books.filter(book => book._id !== bookId)
+      this.setState({ books: updatedBooks });
+
+    } catch (error) {
+      console.log(error.message)
     }
   };
 
@@ -42,6 +77,7 @@ class BestBooks extends React.Component {
                 <Carousel.Caption>
                   <h3>{book.title}</h3>
                   <p>{book.description}</p>
+                  <Button></Button>
                 </Carousel.Caption>
               </Carousel.Item>
             ))}
