@@ -9,6 +9,7 @@ class BestBooks extends React.Component {
     super(props);
     this.state = {
       books: [],
+      showModal: false,
     };
   }
 
@@ -44,11 +45,11 @@ class BestBooks extends React.Component {
     postBook(bookObj);
   };
 
-  deleteBook = async (bookId) => {
+  deleteBook = async (bookID) => {
     try {
-      let url = `${process.env.REACT_APP_SERVER}/books/${bookId}`;
+      let url = `${process.env.REACT_APP_SERVER}/books/${bookID}`;
       await axios.delete(url);
-      let updatedBooks = this.state.books.filter(book => book._id !== bookId)
+      let updatedBooks = this.state.books.filter(book => book._id !== bookID)
       this.setState({ books: updatedBooks });
 
     } catch (error) {
@@ -59,6 +60,14 @@ class BestBooks extends React.Component {
   componentDidMount() {
     this.getBooks();
   }
+
+  openModal = () => {
+    this.setState({ showModal: true })
+  };
+
+  closeModal = () => {
+    this.setState({ showModal: false })
+  };
 
   render() {
     return (
@@ -77,7 +86,7 @@ class BestBooks extends React.Component {
                 <Carousel.Caption>
                   <h3>{book.title}</h3>
                   <p>{book.description}</p>
-                  <Button></Button>
+                  <Button onClick={this.openModal}>Add a Book!</Button>
                 </Carousel.Caption>
               </Carousel.Item>
             ))}
@@ -85,6 +94,12 @@ class BestBooks extends React.Component {
         ) : (
           <h3>No Books Found :(</h3>
         )}
+
+        <BookModal
+          show={this.state.showModal}
+          onHide={this.closeModal}
+          onSubmit={this.handleBookSubmit}
+        />
       </>
     );
   }
