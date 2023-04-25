@@ -10,30 +10,27 @@
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+React, Bootstrap, MongoDB, Mongoose.
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-04-24-2023 - Application now has a functioning express server with custom MongoDB database and using Mongoose for data formatting.
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
-## Estimates
-<!-- See below -->
+04-24-2023 - Application is fully accessible with basic components and backend server + database support. Database now renders on the frontend.
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
 ## Time Estimates
 
-Name of feature: ________________________________
+Name of feature: Book Component
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 60min
 
-Start time: _____
+Start time: 4:14
 
-Finish time: _____
+Finish time: 5:43
 
-Actual time needed to complete: _____
+Actual time needed to complete: 67min
 
 ###############################################################################
 

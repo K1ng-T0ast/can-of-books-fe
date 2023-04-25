@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Carousel } from 'react-bootstrap';
+import Image from './Images/book.jpeg'
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class BestBooks extends React.Component {
 
   getBooks = async () => {
     try {
-      let url = `${process.env.REACT_APP_SERVER_URL}/books`;
+      let url = `${process.env.REACT_APP_SERVER}/books`;
       let urlData = await axios.get(url);
       this.setState({ books: urlData.data });
     } catch (error) {
@@ -27,16 +28,24 @@ class BestBooks extends React.Component {
   render() {
     return (
       <>
-        <h2>My Essential Lifelong Learning &amp; Formation Shelf</h2>
+        <h2 style={{ display: 'flex', justifyContent: 'center', marginTop: '1em' }}>My Essential Lifelong Learning &amp; Formation Shelf</h2>
         {this.state.books.length > 0 ? (
-          <>
+          <Carousel>
             {this.state.books.map((book) => (
-              <p key={book._id}>
-                {book.title} is a book about {book.description}
-              </p>
+              <Carousel.Item key={book._id}>
+                <img
+                  className="d-block w-100"
+                  src={Image}
+                  alt={book.title}
+                  style={{ maxHeight: '800px', objectFit: 'contain', marginTop: '2em', marginBottom: '2em' }}
+                />
+                <Carousel.Caption>
+                  <h3>{book.title}</h3>
+                  <p>{book.description}</p>
+                </Carousel.Caption>
+              </Carousel.Item>
             ))}
-            <p>Book Carousel coming soon</p>
-          </>
+          </Carousel>
         ) : (
           <h3>No Books Found :(</h3>
         )}

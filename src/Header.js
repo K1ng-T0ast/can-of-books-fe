@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 class Header extends React.Component {
   render() {
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand>My Favorite Books</Navbar.Brand>
+      <Navbar  collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar.Brand style={{ marginLeft: '1em' }}>My Favorite Books</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav>
+          <Nav style={{ justifyContent: 'flex-end', width: '100%', marginRight: '1em' }}>
             <NavItem>
               <Link to="/BestBooks" className="nav-link">Home</Link>
             </NavItem>
