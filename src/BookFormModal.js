@@ -23,10 +23,10 @@ class BookModal extends React.Component {
                             </Form.Group>
                             <Form.Group controlId='description'>
                                 <Form.Label>Description</Form.Label>
-                                <Form.Control type='textarea' rows={3} required></Form.Control>
+                                <Form.Control as='textarea' rows={5} required></Form.Control>
                             </Form.Group>
                             <Form.Group controlId='status'>
-                                <Form.Check type='checkbox' label='Highly Recommended'></Form.Check>
+                                <Form.Check type='checkbox' label='Highly Recommended Read'></Form.Check>
                             </Form.Group>
                             <Button variant='primary' type='submit'>Add Book</Button>
                         </Form>

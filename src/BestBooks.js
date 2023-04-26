@@ -76,7 +76,7 @@ class BestBooks extends React.Component {
   render() {
     return (
       <>
-        <h2 style={{ display: 'flex', justifyContent: 'center', marginTop: '1em' }}>My Essential Lifelong Learning &amp; Formation Shelf</h2>
+        <h2 className='shelf-header'>My Essential Bookshelf Collection</h2>
         {this.state.books.length > 0 ? (
           <Carousel>
             {this.state.books.map((book) => (
@@ -85,13 +85,20 @@ class BestBooks extends React.Component {
                   className="d-block w-100"
                   src={Image}
                   alt={book.title}
-                  style={{ maxHeight: '800px', objectFit: 'contain', marginTop: '2em', marginBottom: '2em' }}
                 />
                 <Carousel.Caption>
-                  <h3>{book.title}</h3>
-                  <p>{book.description}</p>
-                  <Button onClick={this.openModal}>Add a Book!</Button>
-                  <Button onClick={() => this.deleteBook(book._id)}>Delete Book</Button>
+                  <h3 className='book-title'>{book.title}</h3>
+                  <h5> {book.status && (
+                    <>
+                      <span role="img" aria-label="heart"> ❤️ </span>
+                      <strong><em>Highly Recommended</em></strong>
+                    </>
+                  )}</h5>
+                  <p className='book-description'>{book.description}</p>
+                  <div className='button-div'>
+                    <Button className='add-button' onClick={this.openModal}>Add a Book!</Button>
+                    <Button className='delete-button' onClick={() => this.deleteBook(book._id)}>Delete a Book!</Button>
+                  </div>
                 </Carousel.Caption>
               </Carousel.Item>
             ))}
