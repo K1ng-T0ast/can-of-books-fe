@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Card, Button, Container, Row, Col } from 'react-bootstrap';
+import { Card, Button, Container, Row, Col, Image } from 'react-bootstrap';
 
 
 class Profile extends Component {
@@ -17,9 +17,10 @@ class Profile extends Component {
                   customized full-stack applications.
                 </Card.Text>
                 <a href="https://www.linkedin.com/in/kylewhiteseattle/">
-                <Button variant="primary" style={{ backgroundColor: 'black', color: 'white' }}>
-                  LinkedIn
-                </Button>
+                  <Image src="https://cdn3.iconfinder.com/data/icons/social-media-black-white-2/512/BW_Linkedin_glyph_svg-256.png" fluid style={{ height: '30px'}} />
+              </a>
+              <a href="https://github.com/K1ng-T0ast">
+                <Image src="https://cdn1.iconfinder.com/data/icons/logotypes/32/github-256.png" fluid style={{ height: '30px', marginLeft: '10px'}}></Image>
               </a>
             </Card.Body>
           </Card>
@@ -33,9 +34,10 @@ class Profile extends Component {
                 Josh is a developer skilled in React, MongoDB, and Node.JS
               </Card.Text>
               <a href="https://www.linkedin.com/in/joshuacoffey23/">
-                <Button variant="primary" style={{ backgroundColor: 'black', color: 'white' }}>
-                  LinkedIn
-                </Button>
+                <Image src="https://cdn3.iconfinder.com/data/icons/social-media-black-white-2/512/BW_Linkedin_glyph_svg-256.png" fluid style={{ height: '30px'}}></Image>
+              </a>
+              <a href="https://github.com/Coff23">
+                <Image src="https://cdn1.iconfinder.com/data/icons/logotypes/32/github-256.png" fluid style={{ height: '30px', marginLeft: '10px'}}></Image>
               </a>
             </Card.Body>
           </Card>
