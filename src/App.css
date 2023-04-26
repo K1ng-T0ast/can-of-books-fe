@@ -6,8 +6,9 @@
 
 .button-div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
+    gap: 250px;
 }
 
 .delete-button {
@@ -24,10 +25,17 @@
     font-weight: bold;
 }
 
+.update-button {
+    background-color: transparent;
+    border-color: black;
+    color: black;
+    font-weight: bold;
+}
+
 .d-block.w-100 {
     margin-top: 2em;
     margin-bottom: 2em;
-    max-height: 800px;
+    max-height: 1000px;
     object-fit: contain;
 }
 
@@ -38,8 +46,42 @@
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
-.book-description{
+.description-container {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.book-description {
     color: black;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: bold;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.footer-bar {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.custom-carousel:hover .carousel-control-prev,
+.custom-carousel:hover .carousel-control-next {
+    opacity: 1;
+}
+
+.custom-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+.custom-carousel .carousel-control-prev:focus .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next:hover .carousel-control-next-icon,
+.custom-carousel .carousel-control-next:focus .carousel-control-next-icon {
+    filter: brightness(75%);
 }
