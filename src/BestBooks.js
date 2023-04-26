@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Carousel, Button } from 'react-bootstrap';
+import { Carousel, Button, Spinner } from 'react-bootstrap';
 import Image from './Images/book.jpeg'
 import BookModal from './BookFormModal';
 
@@ -88,10 +88,19 @@ class BestBooks extends React.Component {
                   style={{ maxHeight: '800px', objectFit: 'contain', marginTop: '2em', marginBottom: '2em' }}
                 />
                 <Carousel.Caption>
-                  <h3>{book.title}</h3>
-                  <p>{book.description}</p>
+                  <h3 style={{ color: 'black' }}>{book.title}</h3>
+                  <p style={{ color: 'black' }}>{book.description}</p>
                   <Button onClick={this.openModal}>Add a Book!</Button>
-                  <Button onClick={() => this.deleteBook(book._id)}>Delete Book</Button>
+                  <Button onClick={() => this.deleteBook(book._id)}>{'Delete Book'}
+                    <Spinner
+                      as="span"
+                      animation="border"
+                      size='sm'
+                      role='status'
+                      aria-hidden="true"
+                    ></Spinner>
+                    <span className='visually-hidden'>Loading...</span>
+                  </Button>
                 </Carousel.Caption>
               </Carousel.Item>
             ))}
