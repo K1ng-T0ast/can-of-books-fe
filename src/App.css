@@ -1,0 +1,45 @@
+.shelf-header {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.button-div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.delete-button {
+    background-color: transparent;
+    border-color: black;
+    color: black;
+    font-weight: bold;
+}
+
+.add-button {
+    background-color: transparent;
+    border-color: black;
+    color: black;
+    font-weight: bold;
+}
+
+.d-block.w-100 {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    max-height: 800px;
+    object-fit: contain;
+}
+
+.book-title {
+    color: #fff;
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+.book-description{
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+}
