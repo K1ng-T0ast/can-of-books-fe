@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Card, Button, Container, Row, Col, Image } from 'react-bootstrap';
+import { Card, Container, Row, Col, Image } from 'react-bootstrap';
 
 
 class Profile extends Component {
